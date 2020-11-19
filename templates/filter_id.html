@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter</title>
+</head>
+<body>
+{% if length == 0 %}
+    <p>There is no collections in your db</p>
+    <a href="/"><button>Return to main page</button></a>
+{% else %}
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>DESCRIPTION</th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{item["id"]}}</td>
+            <td>{{item["Name"]}}</td>
+            <td>{{item["Description"]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+    <a href="/"><button>Вернуться на главную</button></a> <a href="filterdata"><button>Вернуться к поиску</button></a>
+{% endif %}
+</body>
+</html>
